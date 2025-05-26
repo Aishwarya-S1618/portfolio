@@ -1,100 +1,129 @@
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import NavigationBar from './components/NavigationBar';
+import MobileMenu from './components/MobileMenu';
+import AboutSection from './components/AboutSection';
+import ProjectsSection from './components/ProjectsSection';
+import ExperienceSection from './components/ExperienceSection';
+import EducationSection from './components/EducationSection';
+import CertificationsSection from './components/CertificationsSection';
+import ContactSection from './components/ContactSection';
+import InteractiveHero from './components/hero';
 
-export default function Home() {
+// Main Portfolio Component
+export default function Portfolio() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('light');
+
+  // Define theme colors
+  const themes = {
+    dark: {
+      background: '#0A192F',
+      text: '#CCD6F6',
+      button: '#64FFDA',
+      accent: '#64FFDA',
+      hover: '#FADA7A',
+      particleColor:'rgba(100, 255, 219, 0.5)',
+      linkText: '#F5F0CD',
+      mobileBg: 'rgba(10, 25, 47, 0.95)',
+      cardBg: '#112240',
+      timelineBorder: '#64FFDA',
+      skillBg: '#112240',
+      projectBgFrom: '#64FFDA',
+      projectBgTo: '#112240',
+      modalBg: '#112240',
+      modalText: '#EDEFEE',
+      modalTechBg: '#64FFDA',
+      modalTechText: '#0A192F',
+      textAccent: '#8892B0',
+      baseBg: 'black',
+      baseText: 'white'
+    },
+    light: {
+      background:'#FAF5F0',
+      text: '#0A192F',
+      button: '#007B6E',
+      accent: '#007B6E',
+      hover: '#B71C1C',
+      particleColor:'rgba(0, 123, 111, 0.5)',
+      linkText: '#0056A6',
+      mobileBg: 'rgba(250, 245, 240, 0.95)',
+      cardBg: '#FFFFFF',
+      timelineBorder: '#007B6E',
+      skillBg: '#E3F8F4',
+      projectBgFrom: '#B4F1E1',
+      projectBgTo: '#E3F8F4',
+      modalBg: '#FFFFFF',
+      modalText: '#0A192F',
+      modalTechBg: '#007B6E',
+      modalTechText: '#FFFFFF',
+      textAccent: '#405A79',
+      baseBg: '#FAF5F0',
+      baseText: '#0A192F'
+    }
+  };
+
+  const colors = themes[theme];
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
+  // Project data
+  
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen font-sans" style={{ backgroundColor: colors.background, color: colors.text }}>
+      <NavigationBar colors={colors} toggleTheme={toggleTheme} theme={theme} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} colors={colors} />
+      <InteractiveHero colors={colors} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Mobile Menu (Animated Overlay) */}
+      <motion.div>
+        {menuOpen && (
+          <motion.div
+            className="fixed inset-0 bg-opacity-95 flex flex-col justify-center items-center z-50"
+            style={{ backgroundColor: colors.mobileBg }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+            <motion.button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-5 right-5 text-3xl"
+              style={{ color: colors.accent }}
+            >
+              ×
+            </motion.button>
+
+            <div className="flex flex-col items-center space-y-6">
+              {['Home', 'About', 'Projects', 'Certifications', 'Contact'].map((link) => (
+                <motion.a
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  className="text-2xl transition"
+                  style={{ color: colors.text }}
+                  whileHover={{ scale: 1.1, color: colors.hover }}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </motion.div>
+      <AboutSection colors={colors} />
+      <ProjectsSection colors={colors} />
+      <ExperienceSection colors={colors} />
+      <EducationSection colors={colors} />
+      <CertificationsSection colors={colors} />
+      <ContactSection colors={colors} />
+
+      <footer className="py-6 text-center text-sm" style={{ color: colors.textAccent }}>
+        © 2025 Aishwarya S| Built with Next.js & Tailwind CSS
       </footer>
     </div>
   );
