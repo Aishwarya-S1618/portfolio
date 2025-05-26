@@ -30,6 +30,12 @@ export default function Portfolio() {
       cardBg: '#112240',
       timelineBorder: '#64FFDA',
       skillBg: '#112240',
+      skillBg1: '#401F2D', // Light Red hue
+      skillBg2: '#4A3B1D', // Warm Yellow/Gold hue
+      skillBg3: '#1F3D2D', // Light Green hue
+      skillBg4: '#1D3A53', // Light Blue hue
+      skillBg5: '#35274E', // Light Purple hue
+      skillBg6: '#3E3225', // Brown hue
       projectBgFrom: '#64FFDA',
       projectBgTo: '#112240',
       modalBg: '#112240',
@@ -52,6 +58,13 @@ export default function Portfolio() {
       cardBg: '#FFFFFF',
       timelineBorder: '#007B6E',
       skillBg: '#E3F8F4',
+      skillBg1: '#FFE5E5', // Light Red hue
+      skillBg2: '#FFF4CC', // Light Yellow hue
+      skillBg3: '#E1FAE4', // Light Green hue
+      skillBg4: '#E0F0FF', // Light Blue hue
+      skillBg5: '#F3E5F5', // Light Purple hue
+      skillBg6: '#EFE3D6', // Light Brown hue
+      modalText: '#0A192F',
       projectBgFrom: '#B4F1E1',
       projectBgTo: '#E3F8F4',
       modalBg: '#FFFFFF',

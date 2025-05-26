@@ -42,10 +42,10 @@ const ProjectsSection = ({colors }) => {
     link: 'https://aishwarya-s1618.github.io/TicTacToe/',
     },
     {
-    title: 'Emotion-Based Home Automation',
-    tech: ['Python', 'ML', 'IoT'],
-    description: 'Developed an award-winning home automation system that detects user emotions via facial recognition, adjusting lighting and appliances accordingly.',
-    link: 'https://ijisrt.com/emotion-based-home-automation',
+    title: 'Role Based Access Management System',
+    tech: ['Java', 'Spring Boot', 'MySQL'],
+    description: 'Developed a robust Role Based Access Management System using Java and Spring Boot, enhancing security and user management for enterprise applications.',
+    link: 'https://github.com/Aishwarya-S1618/RBAC'
     }
     ];
   return (

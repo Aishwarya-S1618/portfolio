@@ -5,28 +5,33 @@ const ExperienceSection = ({ colors }) => {
     <section id="experience" className="py-20 px-6 sm:px-2 text-center">
       <h2 className="text-4xl font-bold inline-block mb-6" style={{ borderBottom: `4px solid ${colors.accent}` }}>Experience</h2>
       <div className="relative mx-auto lg:w-full sm:w-full md:w-3/4 md:border-l-4 lg:border-l-4 sm:border-l-0" style={{ borderColor:colors.accent, borderWidth: '0 0 0 4px' }}>
-        {[ 
-          {
-            company: 'Accenture',
-            role: 'Application Engineering Analyst',
-            date: 'Nov 2024 – Present',
-            details: [
-              'Automated Open Banking AISP flow using Python and AWS Lambda, cutting manual testing by 60% and streamlining API operations.',
-              'Enhanced system reliability and security while improving overall API performance.'
-            ]
-          },
-          {
-            company: 'Accenture',
-            role: 'Associate Software Engineer',
-            date: 'Nov 2022 – Nov 2024',
-            details: [
-              'Developed sleek and efficient UI components for the Shift Allowance Calculator using React.js, enhancing accessibility and performance.',
-              'Created a Python-powered SQL code review tool that reduced errors by 33%, earning an ACE Award for impact.',
-              'Led research to improve the Leave Tracker tool, enhancing functionality and tailoring features to business needs.',
-              'Applied Snowflake and SQL to manage data efficiently, ensuring swift and accurate insights for decision-making.',
-              'Maintained system stability by proactively identifying and resolving potential issues.',
-              'Fostered team collaboration by organizing team events and building a positive work environment.'
-            ]
+        {[
+        {
+          company: 'Accenture',
+          role: 'Application Engineering Analyst',
+          date: 'Nov 2024 – Present',
+          details: [
+            'Automated Open Banking AISP flow using Python and AWS Lambda, improving operational efficiency and reducing manual testing efforts by 75%.',
+            'Drove API improvement initiatives by analyzing production issues using Splunk and collaborating across teams, resulting in a 10% reduction in API error rates and enhanced system stability.',
+            'Implemented distributed rate limiting for Passkey login using Spring Boot and Redis, reducing brute-force/DoS attacks by 85% and server load by 25%.',
+            'Built a fail-safe mechanism in the Enterprise Group Management app to prevent mass unintended updates, cutting critical errors by 30%.',
+            'Improved rule evaluation job performance by caching user attributes in Redis, reducing DB load and execution time by 75%.'
+          ]
+        },
+        {
+          company: 'Accenture',
+          role: 'Associate Software Engineer',
+          date: 'Nov 2022 – Nov 2024',
+          details: [
+            'Developed sleek and efficient UI components for the Shift Allowance Calculator using React.js, enhancing accessibility and performance.',
+            'Created a Python-powered SQL code review tool that reduced query errors by 33%, earning the ACE Award for its impact.',
+            'Enhanced the SQL review tool with line-specific diagnostics, reducing time and effort by 30%.',
+            'Developed a performant Python-based SQL query review system from scratch that identified inefficient access patterns and reduced DB latency by 40%.',
+            'Led research to improve the Leave Tracker tool, enhancing functionality tailored to business needs.',
+            'Applied Snowflake and SQL to manage data efficiently, enabling swift and accurate business insights.',
+            'Maintained system stability by proactively identifying and resolving potential issues.',
+            'Fostered team collaboration by organizing team events and building a positive work environment.'
+          ]
           }
         ].map((job, index) => (
           <motion.div key={index} className="mb-8 ml-6"
