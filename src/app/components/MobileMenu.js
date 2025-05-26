@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const MobileMenu = ({ menuOpen, setMenuOpen, colors }) => {
   return (
-    <motion.AnimatePresence>
+    <AnimatePresence>
       {menuOpen && (
         <motion.div
           className="fixed inset-0 bg-opacity-95 flex flex-col justify-center items-center z-50"
@@ -35,7 +35,7 @@ const MobileMenu = ({ menuOpen, setMenuOpen, colors }) => {
           </div>
         </motion.div>
       )}
-    </motion.AnimatePresence>
+    </AnimatePresence>
   );
 };
 

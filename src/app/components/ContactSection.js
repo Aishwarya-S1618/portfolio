@@ -14,7 +14,7 @@ const ContactSection = ({ colors }) => {
         {/* Download Resume Button */}
         <motion.a
           href="/resume.pdf" // Update with actual path
-          download="My_Resume.pdf"
+          download="Aishwarya_S_Resume.pdf"
           className="px-6 py-3 font-semibold rounded-lg" 
           style={{ backgroundColor: colors.button, color: colors.modalTechText }}
           whileHover={{ backgroundColor: colors.hover }}>

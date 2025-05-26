@@ -12,7 +12,7 @@ const EducationSection = ({ colors }) => {
             <p className="mt-1" style={{ color: colors.modalText, fontWeight: '600' }}>First Class with Distinction | CGPA: 9.04 </p>
             <div className="mt-4">
               <motion.a
-                href="https://your-research-paper-link.com"
+                href="https://drive.google.com/file/d/1cxWludfDau0jmGkH65OYxz_a1VIXDrXR/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" underline transition" style={{color:colors.text}} whileHover={{ color: colors.hover }}
@@ -30,7 +30,7 @@ const EducationSection = ({ colors }) => {
             </p>
             <div className="mt-4">
               <motion.a
-                href="https://your-research-paper-link.com"
+                href="https://ijisrt.com/emotion-based-home-automation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline transition" style={{color:colors.text}} whileHover={{ color: colors.hover }}

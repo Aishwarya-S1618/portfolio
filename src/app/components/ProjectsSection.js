@@ -17,37 +17,35 @@ const ProjectsSection = ({colors }) => {
       title: 'Portfolio Website',
       tech: ['React', 'Tailwind CSS', 'Framer Motion'],
       description: 'Developed a responsive portfolio website with interactive animations and seamless transitions for a modern user experience.',
-      link: ' https://example.com',
+      link: 'https://github.com/Aishwarya-S1618/portfolio',
       },
     {
     title: 'Automation: Open Banking API Flow',
     tech: ['Python', 'AWS Lambda'],
     description: 'Built a smart automation tool that accelerated Open Banking AISP flow, reducing manual testing time by 60% and improving system reliability.',
-    link: 'https://github.com/yourrepo/open-banking-automation',
     },
     {
     title: 'Little Lemon Restaurant',
     tech: ['React', 'JavaScript', 'CSS'],
     description: 'Developed a vibrant restaurant website featuring an online menu, reservation system, and seamless cart functionality for an engaging user experience.',
-    link: 'https://github.com/yourrepo/little-lemon',
+    link: 'https://github.com/Aishwarya-S1618/Little-Lemon',
     },
     {
     title: 'SQL Code Review Tool',
     tech: ['Python', 'SQL'],
     description: 'Created a Python-powered SQL code review tool that reduced query errors by 33%, improving efficiency. Earned the ACE Award for impact.',
-    link: 'https://github.com/yourrepo/sql-review-tool',
     },
     {
     title: 'Tic-Tac-Toe Game',
     tech: ['React', 'JavaScript'],
     description: 'Designed a playful and interactive Tic-Tac-Toe game using React.js with smart state management and responsive UI.',
-    link: 'https://github.com/yourrepo/tic-tac-toe',
+    link: 'https://aishwarya-s1618.github.io/TicTacToe/',
     },
     {
     title: 'Emotion-Based Home Automation',
     tech: ['Python', 'ML', 'IoT'],
     description: 'Developed an award-winning home automation system that detects user emotions via facial recognition, adjusting lighting and appliances accordingly.',
-    link: 'https://github.com/yourrepo/emotion-home-automation',
+    link: 'https://ijisrt.com/emotion-based-home-automation',
     }
     ];
   return (
@@ -95,18 +93,24 @@ const ProjectsSection = ({colors }) => {
                         ))}
                     </div>
                 <p className="text-sm mb-4" style={{color:colors.modalText}}>{selectedProject.description}</p>
-                <motion.a 
-                href={selectedProject.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-block underline hover:text-[#FADA7A] transition"
-                style={{color:colors.accent}}
-                whileHover={{
-                    scale: 1.05,
-                    color: colors.hover
-                }}>
-                    View on GitHub
-                </motion.a>
+                {selectedProject.link ? (
+                  <motion.a 
+                    href={selectedProject.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-block underline hover:text-[#FADA7A] transition"
+                    style={{ color: colors.accent }}
+                    whileHover={{
+                      scale: 1.05,
+                      color: colors.hover
+                    }}>
+                    View Project
+                  </motion.a>
+                ) : (
+                  <p className="text-sm italic mt-2" style={{ color: colors.modalText }}>
+                    Internal project — code not publicly available
+                  </p>
+                )}
             </div>
       </div>
     )}
