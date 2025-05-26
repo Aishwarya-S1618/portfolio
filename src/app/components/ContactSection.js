@@ -13,7 +13,7 @@ const ContactSection = ({ colors }) => {
       <div className="flex justify-center space-x-6">
         {/* Download Resume Button */}
         <motion.a
-          href="/resume.pdf" // Update with actual path
+          href="https://drive.google.com/file/d/1mPani66Pk2LyWc3QSkCcDe6KLVCu-mOC/view?usp=sharing" // Update with actual path
           download="Aishwarya_S_Resume.pdf"
           className="px-6 py-3 font-semibold rounded-lg" 
           style={{ backgroundColor: colors.button, color: colors.modalTechText }}
