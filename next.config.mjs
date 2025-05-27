@@ -8,6 +8,7 @@ const nextConfig = {output: 'export', // This is the crucial part for static exp
   assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio/' : '',
   // Note: If you're deploying to https://<your-username>.github.io/ (without a repo name path)
   // then you can omit basePath and assetPrefix.
+  reactStrictMode: true,
   };
 
 export default nextConfig;
