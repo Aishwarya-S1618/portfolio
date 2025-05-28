@@ -6,19 +6,19 @@ const CertificationsSection = ({ colors }) => {
       title: 'Meta Front-End Developer Specialization',
       provider: 'Coursera',
       description: 'Specialized in building interactive web interfaces, mastering front-end frameworks, and implementing responsive designs to create seamless user experiences.',
-      link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/XXXXX'
+      link: 'https://coursera.org/share/7f05a6e8bb8b62adea1f1da56b612d03'
     },
     {
       title: 'Microsoft Azure Fundamentals',
       provider: 'Microsoft',
       description: 'Gained expertise in cloud services, deployment strategies, and scalable architecture for modern applications, strengthening cloud proficiency.',
-      link: 'https://www.microsoft.com/en-us/learning/certification-overview.aspx'
+      link: 'https://learn.microsoft.com/en-us/users/shivareddyaishwarya-6414/transcript/dq16ra8xg3qo96x'
     },
     {
       title: 'Python Specialization',
       provider: 'University of Michigan | Coursera',
       description: 'Mastered Python for data manipulation, automation, and efficient software solutions, improving problem-solving and software development skills.',
-      link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/YYYYY'
+      link: 'https://coursera.org/share/a61f2a8004c1fe728a95ba740e6fee0a'
     }
   ];
 
